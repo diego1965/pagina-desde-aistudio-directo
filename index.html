@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistemas para Restaurantes | Resto-QR: Futuro Gastronómico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Roboto', 'sans-serif'],
+              orbitron: ['Orbitron', 'sans-serif'],
+            },
+            boxShadow: {
+              'neon-cyan': '0 0 5px theme("colors.cyan.400"), 0 0 10px theme("colors.cyan.600")',
+              'neon-fuchsia': '0 0 5px theme("colors.fuchsia.400"), 0 0 10px theme("colors.fuchsia.600")',
+            },
+            keyframes: {
+              'pulse-glow': {
+                '0%, 100%': { opacity: 0.7, transform: 'scale(1)' },
+                '50%': { opacity: 1, transform: 'scale(1.05)' },
+              },
+              'slide-in': {
+                '0%': { transform: 'translateY(100%) translateX(100%)', opacity: 0 },
+                '100%': { transform: 'translateY(0) translateX(0)', opacity: 1 },
+              },
+              'slide-out': {
+                '0%': { transform: 'translateY(0) translateX(0)', opacity: 1 },
+                '100%': { transform: 'translateY(100%) translateX(100%)', opacity: 0 },
+              },
+              'ken-burns': {
+                '0%': { transform: 'scale(1) translate(0, 0)', opacity: 0.1 },
+                '50%': { transform: 'scale(1.05) translate(-1%, 1%)', opacity: 0.15 },
+                '100%': { transform: 'scale(1) translate(0, 0)', opacity: 0.1 },
+              },
+              'bubble-in-left': {
+                '0%': { transform: 'translateX(-20px) scale(0.95)', opacity: 0 },
+                '100%': { transform: 'translateX(0) scale(1)', opacity: 1 },
+              },
+              'bubble-in-right': {
+                '0%': { transform: 'translateX(20px) scale(0.95)', opacity: 0 },
+                '100%': { transform: 'translateX(0) scale(1)', opacity: 1 },
+              }
+            },
+            animation: {
+              'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+              'slide-in': 'slide-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+              'slide-out': 'slide-out 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+              'ken-burns': 'ken-burns 30s ease-in-out infinite',
+              'bubble-in-left': 'bubble-in-left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+              'bubble-in-right': 'bubble-in-right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+            }
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.22.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-900">
+    <div id="root"></div>
+    <script type="text/babel" data-type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
